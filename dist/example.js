@@ -72,7 +72,7 @@
 
 			var _nodeBlocks = __webpack_require__(1);
 
-			var a1 = new _nodeBlocks.Node(); //import {Node} from './../src/entry';
+			var a1 = new _nodeBlocks.Node();
 
 			a1.listen(function () {
 				console.log("Value of a1 got Changed", "new value", a1.read());

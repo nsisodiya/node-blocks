@@ -1,5 +1,3 @@
-//import {Node} from './../src/entry';
-
 import { Node } from 'node-blocks';
 
 var a1 = new Node();
