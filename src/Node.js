@@ -29,4 +29,12 @@ export default class Node {
 	read(value) {
 		return this._value;
 	}
+
+	transform(callback) {
+		var a = new Node();
+		this.listen(() => {
+			a.write(callback(this.read()));
+		});
+		return a;
+	}
 }

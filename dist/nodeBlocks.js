@@ -137,7 +137,7 @@
 
 						if (typeof topic !== "string" || typeof callback !== "function") {
 							throw "EventBus Unable to subscribe - topic is not string or callback is not a function";
-						}
+				}
 						if (this._topicList[topic] === undefined) {
 							this._topicList[topic] = [];
 						}
@@ -172,14 +172,14 @@
 								if (callback !== null) {
 									//SKIP the unsubscribed callback !
 									callback.apply(null, args);
-								}
+						}
 							});
 						}
 						this._globalCallbackList.map(function (callback) {
 							if (callback !== null) {
 								//SKIP the unsubscribed callback !
 								callback.apply(null, [topic].concat(args));
-							}
+					}
 						});
 					}
 				}]);
@@ -265,6 +265,17 @@
 					key: 'read',
 					value: function read(value) {
 						return this._value;
+					}
+				}, {
+					key: 'transform',
+					value: function transform(callback) {
+						var _this = this;
+
+						var a = new Node();
+						this.listen(function () {
+							a.write(callback(_this.read()));
+						});
+						return a;
 					}
 				}]);
 

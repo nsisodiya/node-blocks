@@ -73,13 +73,19 @@
 			var _nodeBlocks = __webpack_require__(1);
 
 			var a1 = new _nodeBlocks.Node();
-
 			a1.listen(function () {
-				console.log("Value of a1 got Changed", "new value", a1.read());
+				console.log("a1 changed", a1.read());
 			});
 
-			a1.write('34');
-			a1.write('50');
+			var b1 = a1.transform(function (v) {
+				return 2 * v;
+			});
+			b1.listen(function () {
+				console.log("b1 changed", b1.read());
+			});
+
+			a1.write(10);
+			a1.write(50);
 
 			/***/
 		},
