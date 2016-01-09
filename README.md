@@ -25,3 +25,7 @@ a1.write('35');
 # Transformer Function
 
 ![alt pic](https://raw.githubusercontent.com/nsisodiya/node-blocks/master/images/transform.png)
+
+# Connect Function
+
+![alt pic](https://raw.githubusercontent.com/nsisodiya/node-blocks/master/images/connect.png)

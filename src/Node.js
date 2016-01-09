@@ -37,4 +37,10 @@ export default class Node {
 		});
 		return a;
 	}
+
+	connect(endNode) {
+		this.listen(() => {
+			endNode.write(this.read());
+		});
+	}
 }

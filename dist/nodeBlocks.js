@@ -277,6 +277,15 @@
 						});
 						return a;
 					}
+				}, {
+					key: 'connect',
+					value: function connect(endNode) {
+						var _this2 = this;
+
+						this.listen(function () {
+							endNode.write(_this2.read());
+						});
+					}
 				}]);
 
 				return Node;
