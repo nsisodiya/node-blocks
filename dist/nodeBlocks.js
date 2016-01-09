@@ -4,9 +4,9 @@
 	else if (typeof define === 'function' && define.amd)
 		define([], factory);
 	else if (typeof exports === 'object')
-		exports["node-blocks"] = factory();
+		exports["nodeBlocks"] = factory();
 	else
-		root["node-blocks"] = factory();
+		root["nodeBlocks"] = factory();
 })(this, function () {
 	return /******/ (function (modules) { // webpackBootstrap
 		/******/ 	// The module cache
@@ -74,9 +74,17 @@
 
 			var _EventBus2 = _interopRequireDefault(_EventBus);
 
+			var _Node = __webpack_require__(3);
+
+			var _Node2 = _interopRequireDefault(_Node);
+
 			function _interopRequireDefault(obj) {
 				return obj && obj.__esModule ? obj : {default: obj};
 			}
+
+			module.exports = {
+				Node: _Node2.default
+			};
 
 			/***/
 		},
@@ -180,6 +188,90 @@
 			}();
 
 			exports.default = EventBus;
+
+			/***/
+		},
+		/* 3 */
+		/***/ function (module, exports, __webpack_require__) {
+
+			'use strict';
+
+			var _createClass = function () {
+				function defineProperties(target, props) {
+					for (var i = 0; i < props.length; i++) {
+						var descriptor = props[i];
+						descriptor.enumerable = descriptor.enumerable || false;
+						descriptor.configurable = true;
+						if ("value" in descriptor) descriptor.writable = true;
+						Object.defineProperty(target, descriptor.key, descriptor);
+					}
+				}
+
+				return function (Constructor, protoProps, staticProps) {
+					if (protoProps) defineProperties(Constructor.prototype, protoProps);
+					if (staticProps) defineProperties(Constructor, staticProps);
+					return Constructor;
+				};
+			}();
+			/**
+			 * Created by narendrasisodiya on 09/01/16.
+			 */
+
+				//Base Node Class Define very simple Basic Node
+				//  You can read/write on a Node
+				//  You can listen changes on a Node
+				//  Node act as variable container
+
+			Object.defineProperty(exports, "__esModule", {
+				value: true
+			});
+
+			var _EventBus = __webpack_require__(2);
+
+			var _EventBus2 = _interopRequireDefault(_EventBus);
+
+			function _interopRequireDefault(obj) {
+				return obj && obj.__esModule ? obj : {default: obj};
+			}
+
+			function _classCallCheck(instance, Constructor) {
+				if (!(instance instanceof Constructor)) {
+					throw new TypeError("Cannot call a class as a function");
+				}
+			}
+
+			var changeEvtName = 'onChange';
+
+			var Node = function () {
+				function Node(value) {
+					_classCallCheck(this, Node);
+
+					this._value = value;
+					this._ebus = new _EventBus2.default();
+				}
+
+				_createClass(Node, [{
+					key: 'listen',
+					value: function listen(callback) {
+						return this._ebus.subscribe(changeEvtName, callback);
+					}
+				}, {
+					key: 'write',
+					value: function write(value) {
+						this._value = value;
+						this._ebus.publish(changeEvtName);
+					}
+				}, {
+					key: 'read',
+					value: function read(value) {
+						return this._value;
+					}
+				}]);
+
+				return Node;
+			}();
+
+			exports.default = Node;
 
 			/***/
 		}

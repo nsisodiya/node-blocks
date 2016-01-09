@@ -1,4 +1,4 @@
-class EventBus {
+export default class EventBus {
 	constructor() {
 		this._topicList = {};
 		this._globalCallbackList = [];
@@ -44,4 +44,3 @@ class EventBus {
 
 	}
 }
-export default EventBus;
