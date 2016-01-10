@@ -1,6 +1,6 @@
 {
 	"name": "node-blocks",
-	"version": "2.2.0",
+	"version": "2.3.0",
 	"description": "Flow Based Programming with JavaScript",
 	"main": "dist/nodeBlocks.js",
 	"scripts": {
