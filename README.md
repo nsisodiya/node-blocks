@@ -7,6 +7,9 @@ Flow Based Programming with JavaScript
 npm install node-blocks
 ```
 
+# Documentation
+coming soon
+
 # Node
 In this project Node function constructor is a variable container. You can store any variable on node
 
