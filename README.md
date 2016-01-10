@@ -29,3 +29,11 @@ a1.write('35');
 # Connect Function
 
 ![alt pic](https://raw.githubusercontent.com/nsisodiya/node-blocks/master/images/connect.png)
+
+# Block
+
+Block has kind of machine. Block has multiple inout and multiple out Nodes. You can connect Multiple block to 
+ generate Bigger Blocks.
+ 
+ Example 
+![alt pic](https://raw.githubusercontent.com/nsisodiya/node-blocks/master/images/adder.png)

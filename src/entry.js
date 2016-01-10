@@ -1,6 +1,7 @@
-import EventBus from './EventBus';
 import Node from './Node';
+import Block from './Block';
 
 module.exports = {
-	Node: Node
+	Node: Node,
+	Block: Block
 };
