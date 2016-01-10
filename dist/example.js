@@ -58,7 +58,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _nodeBlocks = __webpack_require__(1);
 
-	var m1 = new _nodeBlocks.Block({
+		var doubler = new _nodeBlocks.Block({
+			in: ["x"],
+			out: ["d"]
+		}, function (inp, out) {
+			out.d.write(inp.x.read() * 2);
+		});
+
+		var adder = new _nodeBlocks.Block({
 		in: ["x", "y"],
 		out: ["sum"]
 	}, function (inp, out) {
@@ -66,14 +73,16 @@ return /******/ (function(modules) { // webpackBootstrap
 		out.sum.write(sum);
 	});
 
-	m1.out.sum.listen(function () {
-		console.log("Total Sum is ", m1.out.sum.read());
+		adder.out.sum.connect(doubler.in.x);
+
+		doubler.out.d.listen(function () {
+			console.log("Double of Sum is ", doubler.out.d.read());
 	});
 
-	m1.in.x.write(10);
-	m1.in.y.write(20);
-	m1.in.x.write(30);
-	m1.in.y.write(50);
+		adder.in.x.write(10);
+		adder.in.y.write(20);
+		adder.in.x.write(30);
+		adder.in.y.write(50);
 
 /***/ },
 /* 1 */
