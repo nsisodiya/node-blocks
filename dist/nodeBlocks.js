@@ -245,7 +245,7 @@
 				}
 						if (this._topicList[topic] === undefined) {
 							this._topicList[topic] = [];
-						}
+				}
 
 						var i = this._topicList[topic].push(callback) - 1;
 
@@ -277,7 +277,7 @@
 								if (callback !== null) {
 									//SKIP the unsubscribed callback !
 									callback.apply(null, args);
-								}
+						}
 							});
 						}
 						this._globalCallbackList.map(function (callback) {
@@ -355,7 +355,7 @@
 						var _this = this;
 
 						this.in = {};
-						this.getConfig1().in.map(function (v) {
+						this.getConfig().in.map(function (v) {
 							_this.in[v] = new _Node2.default();
 							_this.in[v].listen(function () {
 								_this.run(_this.in, _this.out);
