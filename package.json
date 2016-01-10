@@ -1,8 +1,8 @@
 {
 	"name": "node-blocks",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"description": "Flow Based Programming with JavaScript",
-	"main": "dist/node-blocks.js",
+	"main": "dist/nodeBlocks.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
