@@ -8,13 +8,25 @@ var doubler = new Block({
 });
 
 
-var adder = new Block({
-	in: ["x", "y"],
-	out: ["sum"]
-}, function (inp, out) {
-	var sum = inp.x.read() + inp.y.read();
-	out.sum.write(sum);
-});
+class AdderBlock extends Block {
+	constructor() {
+		super();
+	}
+
+	getConfig() {
+		return {
+			in: ["x", "y"],
+			out: ["sum"]
+		}
+	}
+
+	run(inp, out) {
+		var sum = inp.x.read() + inp.y.read();
+		out.sum.write(sum);
+	}
+}
+
+var adder = new AdderBlock();
 
 adder.out.sum.connect(doubler.in.x);
 

@@ -107,7 +107,26 @@ adder.in.y.write(50);
 ```
 ![alt pic](https://raw.githubusercontent.com/nsisodiya/node-blocks/master/images/adder-out.png)
 
+# Alternate Syntax
+```js
+class AdderBlock extends Block {
+  constructor() {
+    super();
+  }
 
+  getConfig() {
+    return {
+      in: ["x", "y"],
+      out: ["sum"]
+    }
+  }
+
+  run(inp, out) {
+    var sum = inp.x.read() + inp.y.read();
+    out.sum.write(sum);
+  }
+}
+```
 # Adder + Doubler
 
 ![alt pic](https://raw.githubusercontent.com/nsisodiya/node-blocks/master/images/adder-doubler-dia.png)
