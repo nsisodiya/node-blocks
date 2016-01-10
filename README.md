@@ -30,7 +30,7 @@ a1.write('50');
 
 ![alt pic](https://raw.githubusercontent.com/nsisodiya/node-blocks/master/images/node-out.png)
 
- # Transformer Function
+# Transform a Node into Another
 
 ![alt pic](https://raw.githubusercontent.com/nsisodiya/node-blocks/master/images/transform-dia.png)
 
@@ -54,7 +54,7 @@ a1.write(50);
 ```
 ![alt pic](https://raw.githubusercontent.com/nsisodiya/node-blocks/master/images/transform-out.png)
 
-# Connect Function
+# Connect a Node to another
 
 ![alt pic](https://raw.githubusercontent.com/nsisodiya/node-blocks/master/images/connect-dia.png)
 ```js
@@ -76,7 +76,8 @@ a1.write(10);
 a1.write(50);
 ```
 ![alt pic](https://raw.githubusercontent.com/nsisodiya/node-blocks/master/images/connect-out.png)
-# Block
+
+# Create Blocks
 
 Block has kind of machine. Block has multiple inout and multiple out Nodes. You can connect Multiple block to 
  generate Bigger Blocks.
@@ -105,6 +106,8 @@ adder.in.x.write(30);
 adder.in.y.write(50);
 ```
 ![alt pic](https://raw.githubusercontent.com/nsisodiya/node-blocks/master/images/adder-out.png)
+
+
 # Adder + Doubler
 
 ![alt pic](https://raw.githubusercontent.com/nsisodiya/node-blocks/master/images/adder-doubler-dia.png)
@@ -135,5 +138,4 @@ doubler.out.d.listen(function () {
 });
 
 ```
-
 ![alt pic](https://raw.githubusercontent.com/nsisodiya/node-blocks/master/images/adder-doubler-out.png)
