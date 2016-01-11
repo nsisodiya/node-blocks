@@ -156,5 +156,9 @@ doubler.out.d.listen(function () {
 	console.log("Double of Sum is ", doubler.out.d.read());
 });
 
+adder.in.x.write(10);
+adder.in.y.write(20);
+adder.in.x.write(30);
+adder.in.y.write(50);
 ```
 ![alt pic](https://raw.githubusercontent.com/nsisodiya/node-blocks/master/images/adder-doubler-out.png)
